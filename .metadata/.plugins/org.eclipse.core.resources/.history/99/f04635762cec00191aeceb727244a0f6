@@ -1,0 +1,5 @@
+spring.application.name=bills-service
+server.port=8080 #default, can be omitted
+
+bills-service.maximum-bills=40
+bills-service.denominations=2000,500,200,100

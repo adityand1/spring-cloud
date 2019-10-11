@@ -1,0 +1,7 @@
+package com.scsinfinity.microservices.billsservice.service;
+
+import com.scsinfinity.microservices.billsservice.domain.BillsDTO;
+
+public interface IBillsService {
+	BillsDTO getBillsInfo();
+}

@@ -1,0 +1,16 @@
+package com.scsinfinity.microservices.billsservice.configuration;
+
+import java.util.List;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
+@ConfigurationProperties("bills-service")
+public class BillsConfiguration {
+	private int maximumBills;
+	//private List<Integer> denominations; 
+}

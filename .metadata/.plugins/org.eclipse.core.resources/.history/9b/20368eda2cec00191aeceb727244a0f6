@@ -1,0 +1,5 @@
+package com.scsinfinity.microservices.billsservice.configuration;
+
+public class BillsConfiguration {
+
+}

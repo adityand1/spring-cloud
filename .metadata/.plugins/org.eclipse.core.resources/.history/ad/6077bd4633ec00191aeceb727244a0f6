@@ -1,0 +1,13 @@
+package com.scsinfinity.microservices.billsservice.configuration;
+
+import java.util.List;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
+@Component
+@ConfigurationProperties("bills-service")
+public class BillsConfiguration {
+	private Integer maximumBills;
+	private List<Integer> denominations; 
+}

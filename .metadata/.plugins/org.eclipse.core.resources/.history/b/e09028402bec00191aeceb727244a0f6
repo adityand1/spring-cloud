@@ -1,0 +1,11 @@
+package com.scsinfinity.microservices.billsservice.domain;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
+public class BillsDTO {
+	private Integer maxNosOfBillsPerTransaction;
+	private List<BigDecimal> billsTypeList; 
+}

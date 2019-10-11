@@ -1,0 +1,17 @@
+package com.scsinfinity.microservices.billsservice.domain;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
+@ConfigurationProperties("bills-service")
+public class BillsDTO {
+	private Integer maxNosOfBillsPerTransaction;
+	private List<BigDecimal> billsTypeList; 
+}
