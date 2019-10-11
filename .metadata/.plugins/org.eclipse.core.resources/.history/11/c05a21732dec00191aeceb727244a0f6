@@ -1,5 +1,0 @@
-package com.scsinfinity.microservices.billsservice.controller;
-
-public class BillsController {
-
-}

@@ -1,8 +1,0 @@
-package com.scsinfinity.microservices.billsservice.configuration;
-
-import org.springframework.boot.context.properties.ConfigurationProperties;
-
-
-public class BillsConfiguration {
-	p
-}
