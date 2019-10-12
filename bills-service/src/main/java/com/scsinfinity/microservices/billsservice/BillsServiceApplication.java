@@ -6,6 +6,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
+import brave.sampler.Sampler;
+
 @SpringBootApplication
 @EnableDiscoveryClient
 public class BillsServiceApplication {
@@ -17,5 +19,10 @@ public class BillsServiceApplication {
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer propertyConfigurer() {
 	   return new PropertySourcesPlaceholderConfigurer();
+	}
+	
+	@Bean
+	public Sampler defaultSampler() {
+		return Sampler.ALWAYS_SAMPLE;
 	}
 }
