@@ -10,5 +10,6 @@ public interface IAccountService {
 	AccountDomain save(AccountDomain accountDomain);
 	List<AccountDomain> saveAll(List<AccountDomain> accountDomains);
 	AccountDomain findByCardNo(String cardNo);
+	List<AccountDomain> findAll();
 	AccountDomain deductFromBalance(BigDecimal requestedAmt, Long id);
 }

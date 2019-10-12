@@ -48,14 +48,24 @@ public class AccountService implements IAccountService {
 	public AccountDomain deductFromBalance(BigDecimal requestedAmt,Long id) {
 		AccountDomain account= accountRepository.findById(id).orElseThrow(EntityNotFoundException::new);
 		return account.getBalance().compareTo(requestedAmt)>0
-				?AccountDomain.builder().balance(account.getBalance().subtract(requestedAmt))
+				?deduct(account,requestedAmt)
+				:AccountDomain.builder().defaultData(true).build();
+			
+	}
+
+	@Override
+	public List<AccountDomain> findAll() {
+		return accountRepository.findAll();
+	}
+	
+	private AccountDomain deduct(AccountDomain account, BigDecimal deductableAmt) {
+		return accountRepository.save(AccountDomain.builder().balance(account.getBalance().subtract(deductableAmt))
 					.id(account.getId())
 					.cardNo(account.getCardNo())
 					.name(account.getName())
 					.dateOfExpiryOfCard(account.getDateOfExpiryOfCard())
-					.defaultData(account.getDefaultData()).build()
-				:AccountDomain.builder().defaultData(true).build();
-			
+					.defaultData(account.getDefaultData())
+					.build());
 	}
 
 }

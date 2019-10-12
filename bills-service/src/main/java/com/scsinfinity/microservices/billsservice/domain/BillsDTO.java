@@ -10,4 +10,5 @@ import lombok.Getter;
 public class BillsDTO {
 	private Integer maximumBills;
 	private List<Integer> denominations; 
+	private Integer port;
 }

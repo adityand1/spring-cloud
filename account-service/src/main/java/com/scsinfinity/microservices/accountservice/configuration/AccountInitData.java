@@ -28,6 +28,8 @@ public class AccountInitData implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
+		if(accountService.findAll().size()>0)
+			return;
 		AccountDomain accountDomain1=AccountDomain.builder()
 				.name("Abhijeet Sinha")
 				.cardNo("773335x33")
